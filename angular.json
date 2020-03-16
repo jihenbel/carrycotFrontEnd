@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "carrycout-project": {
+    "carrycot-project": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/carrycout-project",
+            "outputPath": "dist/carrycot-project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -58,18 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "carrycout-project:build"
+            "browserTarget": "carrycot-project:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "carrycout-project:build:production"
+              "browserTarget": "carrycot-project:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "carrycout-project:build"
+            "browserTarget": "carrycot-project:build"
           }
         },
         "test": {
@@ -106,15 +107,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "carrycout-project:serve"
+            "devServerTarget": "carrycot-project:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "carrycout-project:serve:production"
+              "devServerTarget": "carrycot-project:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "carrycout-project"
+  "defaultProject": "carrycot-project"
 }

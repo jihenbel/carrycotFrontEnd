@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url("https://d39l2hkdp2esp1.cloudfront.net/img/photo/166605/166605_00_2x.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+.body-container {
+    background: rgba(248,249,250, 0.5);
+    min-height: 100vh;
+}

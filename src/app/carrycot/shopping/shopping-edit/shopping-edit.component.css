@@ -1,0 +1,22 @@
+.command-preview {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.command-preview-container {
+    /*box-shadow: 0px 0px 12px 2px rgba(227,179,169,1);*/
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: #f8f8f8;
+    padding-top: 10px;
+}
+select.form-control {
+    -webkit-transition: none;
+    transition: none;
+}
+input.ng-invalid.ng-touched {
+    border-color: red;
+}
