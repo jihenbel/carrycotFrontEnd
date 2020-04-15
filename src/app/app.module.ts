@@ -25,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {CarrycotResolver} from './carrycot/carrycot-detail/carrycot-resolver.service';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import {CarrycotElementResolver} from './carrycot/carrycot-element-resolver.service';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import {CarrycotElementResolver} from './carrycot/carrycot-element-resolver.serv
     HomeComponent,
     NotFoundPageComponent,
     CarrycotListStartComponent,
+    SafePipe,
   ],
     imports: [
         BrowserModule,

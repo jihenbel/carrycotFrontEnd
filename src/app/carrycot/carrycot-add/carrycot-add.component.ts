@@ -27,6 +27,7 @@ export class CarrycotAddComponent implements OnInit, CanComponentDeactivate {
   }
 
   ngOnInit() {
+    this.changesSaved = false;
   }
 
   showPreview(event) {
@@ -47,21 +48,26 @@ export class CarrycotAddComponent implements OnInit, CanComponentDeactivate {
     this.carrycotService.addCarrycotApi(formData).subscribe(
         (response) => {
           console.log(response);
-          // this.SpinnerService.hide();
-          // this.router.navigate(['/carrycots']);
+          this.SpinnerService.hide();
+          this.router.navigate(['/carrycots']);
           this.changesSaved = true;
           this.form.reset();
         },
         (error) => console.log(error)
     );
-    // setTimeout(() => this.router.navigate(['/carrycots']), 1500);
+    setTimeout(() => this.router.navigate(['/carrycots']), 1500);
   }
   canDeactivate(): Observable<boolean> | Promise<boolean> |boolean {
     const carrycotName = this.form.value.name;
     const carrycotPrice = this.form.value.price;
     const carrycotDescription = this.form.value.description;
     const carrycotImage = this.form.value.imagePath;
-    if ((carrycotName !== '' || carrycotPrice !== '' || carrycotDescription !== '' || carrycotImage !== '') && !this.changesSaved) {
+    console.log(carrycotImage);
+    console.log(carrycotDescription);
+    console.log(carrycotPrice);
+    console.log(carrycotName);
+    console.log(this.changesSaved);
+    if ((carrycotName !== '' || (carrycotPrice !== '' && carrycotPrice !== 0) || carrycotDescription !== '' || carrycotImage !== '') && !this.changesSaved) {
        return confirm('Voulez vous vraiment quitter cette page? Les changements ne seront pas sauvegardés');
     } else {
        return true;

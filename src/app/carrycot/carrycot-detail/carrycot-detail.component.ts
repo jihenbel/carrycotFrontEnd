@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Data, Params, Router} from '@angular/router';
-import {CarrycotService} from '../carrycot.service';
+import {ActivatedRoute, Data, Params} from '@angular/router';
 import {CarrycotModel} from '../carrycot.model';
-import {environment} from '../../../environments/environment';
 
 @Component({
     selector: 'app-carrycot-detail',
@@ -12,16 +10,15 @@ import {environment} from '../../../environments/environment';
 export class CarrycotDetailComponent implements OnInit {
     carrycot: CarrycotModel;
     carrycots: CarrycotModel[] = [];
-    imageDirectory: string = environment.imageDirectory;
+    imageDirectory = 'http://127.0.0.1:8887/';
 
-    constructor(private route: ActivatedRoute, private service: CarrycotService) {
+    constructor(private route: ActivatedRoute) {
     }
 
     ngOnInit() {
         this.route.parent.data.subscribe(
             (data: Data) => {
                 this.carrycots = data.carrycots;
-                console.log(this.carrycots);
             }
         );
         this.route.params.subscribe(

@@ -11,17 +11,17 @@ export class CarrycotService {
 
     constructor(private httpClient: HttpClient) {}
     getCarrycotsApi() {
-        return this.httpClient.get<CarrycotModel[]>('http://127.0.0.1:8000/carrycots');
-    }
-    getCarrycots() {
-        return this.carrycots.slice();
+        return this.httpClient.get<CarrycotModel[]>('http://127.0.0.1:8001/carrycots');
     }
     getCarrycotApi(id) {
-        return this.httpClient.get('http://127.0.0.1:8000/api/carrycots/' + id);
+        return this.httpClient.get('http://127.0.0.1:8001/api/carrycots/' + id);
     }
     addCarrycotApi(carrycot: any) {
         console.log(carrycot);
-        return this.httpClient.post('http://127.0.0.1:8000/carrycot', carrycot);
+        return this.httpClient.post('http://127.0.0.1:8001/carrycot', carrycot);
+    }
+    getCarrycots() {
+        return this.carrycots.slice();
     }
     addCarrycotToList(carrycot: CarrycotModel) {
         this.carrycots.push(carrycot);

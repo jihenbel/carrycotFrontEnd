@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  imageDirectory: '..\\..\\..\\..\\..\\carrycotBackend\\public\\'
+  imageDirectory: 'C:\\wamp64\\www\\carrycotBackend\\public\\'
 };
 
 /*
